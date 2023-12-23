@@ -1,3 +1,6 @@
 #!/bin/bash
 
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o notely
+
+# DOCKERHUB_NAMESPACE='dockerfortesting159'
+# docker build -t ${DOCKERHUB_NAMESPACE}/notely:latest .

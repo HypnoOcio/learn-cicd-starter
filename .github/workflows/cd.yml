@@ -47,7 +47,7 @@ jobs:
             PROJECT_ID: 'notely-409016'
             REGION: 'us-central1'
             REPOSITORY: 'notely-ar-repo'
-        run: gcloud run deploy notely --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${IMAGE_NAME}:latest --region ${REGION} --allow-unauthenticated --project $PROJECT_ID --max-instances=1
+        run: gcloud run deploy notely --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${IMAGE}:latest --region ${REGION} --allow-unauthenticated --project $PROJECT_ID --max-instances=1
       
 
 

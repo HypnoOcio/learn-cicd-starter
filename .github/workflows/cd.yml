@@ -41,6 +41,13 @@ jobs:
           REPOSITORY: 'notely-ar-repo'
         run: gcloud builds submit --tag ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:latest .
 
+      - name: "GCP  DEPLOY STEP"
+        env:
+            IMAGE: 'novelty'
+            PROJECT_ID: 'notely-409016'
+            REGION: 'us-central1'
+            REPOSITORY: 'notely-ar-repo'
+        run: gcloud run deploy novelty --image=${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE} --tag=latest --max-instances=1 --allow-unauthenticated
       
 
 

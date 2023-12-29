@@ -30,7 +30,7 @@ jobs:
       
       - name: "Migrate Databse (migrate)"
         env: 
-          DATABASE_URL: '${{ secrets.GCP_CREDENTIALS }}'
+          DATABASE_URL: '${{ secrets.DATABASE_URL }}'
         run: ./scripts/migrateup.sh
       
       - name: 'auth to GPC with service account'

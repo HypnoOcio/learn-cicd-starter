@@ -24,6 +24,14 @@ jobs:
       
       - name: Build application
         run: ./scripts/buildprod.sh
+
+      - name: "Migrate Databse (install goose)"
+        run: go install github.com/pressly/goose/v3/cmd/goose@latest
+      
+      - name: "Migrate Databse (migrate)"
+        env: 
+          DATABASE_URL: '${{ secrets.GCP_CREDENTIALS }}'
+        run: ./scripts/migrateup.sh
       
       - name: 'auth to GPC with service account'
         uses: 'google-github-actions/auth@v2'
